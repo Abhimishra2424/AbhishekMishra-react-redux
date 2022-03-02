@@ -1,10 +1,19 @@
+import { Header, ProductDetail, ProductListing } from "./containers";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { NotFound } from "./components/NotFound";
 import "./App.css";
-import { Header } from "./containers/Header";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<ProductListing />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
