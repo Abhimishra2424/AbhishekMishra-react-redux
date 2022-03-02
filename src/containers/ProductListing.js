@@ -21,7 +21,13 @@ export const ProductListing = () => {
   }, []);
 
   return (
-    <div className="ui grid container">
+    <div
+      className="ui grid container"
+      style={{
+        marginTop: "40px",
+        height: "100vh",
+      }}
+    >
       <Product />
     </div>
   );
